@@ -1,0 +1,24 @@
+Levels of parking<input
+  type="number"
+  [(ngModel)]="rows"
+  placeholder="Enter level of parking"
+/>
+Single Spots<input
+  type="number"
+  [(ngModel)]="single"
+  placeholder="Number of Single Spots"
+/>
+Compact spots<input
+  type="number"
+  [(ngModel)]="compact"
+  placeholder="Number of Compact Spots"
+/>
+Large Spots<input
+  type="number"
+  [(ngModel)]="large"
+  placeholder="Number of Large Spots"
+/>
+
+<div *ngIf="!isWorking">
+  <button class="btn waves-effect waves-light" (click)="clickInitParking()">Init Parking</button>
+</div>

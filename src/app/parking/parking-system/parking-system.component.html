@@ -1,0 +1,76 @@
+<div *ngIf="!isWorking">
+  <input
+    type="text"
+    [(ngModel)]="regNo"
+    required="required"
+    placeholder="Enter the vehicle registration number"
+  />
+  <button class="btn waves-effect waves-light" (click)="clickAddBike()">
+    Add Bike
+    <i class="material-icons right">add</i>
+  </button>
+  <button class="btn waves-effect waves-light" (click)="clickAddCar()">
+    Add Car
+  </button>
+  <button class="btn waves-effect waves-light" (click)="clickAddBus()">
+    Add Bus
+  </button>
+
+  <button class="btn waves-effect waves-light" (click)="clickFindVehicle()">
+    Search
+  </button>
+  <button class="btn waves-effect waves-light" (click)="clickGetStatus()">
+    Status
+  </button>
+</div>
+<div *ngIf="isWorking">
+  Wait for the server to repsond back.
+</div>
+
+<div>
+  <div id="msg" *ngIf="msg">
+    <h5>{{ msg }}</h5>
+  </div>
+</div>
+
+<div *ngIf="parking">
+  <!--Total Parking Levels = {{ parking.length }}-->
+
+  <table *ngFor="let park of parking; let index = index">
+    <thead>
+      <td></td>
+      <td><h5>Single Spot</h5></td>
+      <td><h5>Compact Spot</h5></td>
+      <td><h5>Large Spot</h5></td>
+    </thead>
+    <tbody>
+      <td>
+        <h5>Level {{ index }}</h5>
+      </td>
+      <td>
+        <p>
+          <span *ngFor="let bike of park.singleSpot.bike">🏍</span>
+        </p>
+      </td>
+      <td>
+        <p>
+          <span *ngFor="let bike of park.compactSpot.bike">🏍</span>
+        </p>
+        <p>
+          <span *ngFor="let car of park.compactSpot.car">🚗</span>
+        </p>
+      </td>
+      <td>
+        <p>
+          <span *ngFor="let bike of park.largeSpot.bike">🏍</span>
+        </p>
+        <p>
+          <span *ngFor="let car of park.largeSpot.car">🚗</span>
+        </p>
+        <p>
+          <span *ngFor="let bus of park.largeSpot.bus">🚌</span>
+        </p>
+      </td>
+    </tbody>
+  </table>
+</div>

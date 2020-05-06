@@ -6,23 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## PROJECT
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+It has 3 components among them 2 are sub-components for the tabs.
 
-## Build
+parking.service.ts -> acts a bridge for the UI/components and our parking system hosted on heroku. So whatever is permissible for node app can be accessed by this service.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## HOST
+The app is hosted at https://parking-lot-system.herokuapp.com/
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# parking-lot-frontend
+The frontend is hosted in firebase and can be accessed at https://test-e1682.firebaseapp.com/main
